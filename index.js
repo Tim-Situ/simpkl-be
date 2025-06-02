@@ -84,8 +84,9 @@ app.use("/artikel", require("./routes/Artikel"));
 app.use("/pengumuman", require("./routes/Pengumuman"));
 
 
+// app.listen(process.env.APP_PORT, () => {
+//   console.log("Server up and running: " + process.env.APP_PORT);
+// });
 
 
-app.listen(process.env.APP_PORT, () => {
-  console.log("Server up and running: " + process.env.APP_PORT);
-});
+module.exports = app;
