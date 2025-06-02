@@ -10,7 +10,7 @@ on:
 jobs:
 
   test:
-    name: Continuous Testing
+    name: Testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -39,7 +39,7 @@ jobs:
         run: npm test
 
   sonarqube:
-    name: Continuous Inspection
+    name: Inspection
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -52,7 +52,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   deploy:
-    name: Deploy to Render
+    name: Deployment
     runs-on: ubuntu-latest
     needs: sonarqube
     permissions:
