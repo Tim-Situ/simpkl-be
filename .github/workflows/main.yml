@@ -1,4 +1,4 @@
-name: Build
+name: CICD
 on:
   push:
     branches:
@@ -26,6 +26,12 @@ jobs:
         run: |
           echo "AZURE_STORAGE_CONNECTION_STRING=${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" >> .env
           echo "AZURE_STORAGE_CONTAINER_NAME=${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}" >> .env
+          echo "ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }}" >> .env
+          echo "REFRESH_TOKEN_SECRET=${{ secrets.REFRESH_TOKEN_SECRET }}" >> .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
+          echo "ENDPOINT=${{ secrets.ENDPOINT }}" >> .env
+          echo "ACCESS_KEY=${{ secrets.ACCESS_KEY }}" >> .env
+          echo "SECRET_ACCESS_KEY=${{ secrets.SECRET_ACCESS_KEY }}" >> .env
 
       - name: Run tests
         run: npm test
