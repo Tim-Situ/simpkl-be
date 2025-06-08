@@ -35,6 +35,9 @@ jobs:
           echo "ENDPOINT=${{ secrets.ENDPOINT }}" >> .env
           echo "ACCESS_KEY=${{ secrets.ACCESS_KEY }}" >> .env
           echo "SECRET_ACCESS_KEY=${{ secrets.SECRET_ACCESS_KEY }}" >> .env
+          echo "TES_TOKEN_GURU=${{ secrets.TES_TOKEN_GURU }}" >> .env
+          echo "TES_TOKEN_SISWA=${{ secrets.TES_TOKEN_SISWA }}" >> .env
+          echo "TES_TOKEN_GURU_TIDAK_AKSES=${{ secrets.TES_TOKEN_GURU_TIDAK_AKSES }}" >> .env
 
       - name: Run tests
         run: npm test
